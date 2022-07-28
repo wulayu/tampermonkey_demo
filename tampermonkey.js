@@ -64,8 +64,9 @@ if (webSite == "http://192.168.201.198:4000/stock_items/check_out_by_wave?q[stoc
                 console.log("*** pasted ***");
                 console.log($("#app").get());
 
-                $("#app")[0].__vue__.$children[1].$children[3].$refs.numberInfo.order.orderNo = output.weight;
+                // $("#app")[0].__vue__.$children[1].$children[3].$refs.numberInfo.order.orderNo = output.weight;
                 // 可以用$("#app").__vue__命令在chrome console里查看
+                $("#app")[0].__vue__.$children[1].$children[3].$refs.packageInfo.packages[0].weight = output.weight;
             });
         }, 10000)
 
