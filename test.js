@@ -52,8 +52,8 @@ if (webSite == "http://192.168.201.198:4000/stock_items/check_out_by_wave?q[stoc
         var request_interval = setInterval(checkIsExist, 200);
         // 延时等待vue渲染完成
         function checkIsExist() {
-            if ($('.el-card__header').length > 0) {                
-                console.log($('.el-card__header'));
+            if ($('.el-card__header').length > 0) {
+                // console.log($('.el-card__header'));
                 console.log("*** inserting button ***");
 
                 $('.el-card__header').before(
@@ -66,12 +66,9 @@ if (webSite == "http://192.168.201.198:4000/stock_items/check_out_by_wave?q[stoc
                     output = JSON.parse(output);
                     console.log(output.weight);
 
-                    console.log("*** pasted ***");
-                    console.log($("#app").get());
-
                     // 可以用$("#app").__vue__命令在chrome console里查看
                     // $("#app")[0].__vue__.$children[1].$children[3].$refs.numberInfo.order.orderNo = "order#";
-
+                    console.log("*** pasted ***");
                     $("#app")[0].__vue__.$children[1].$children[3].$refs.packageInfo.packages[0].weight = output.weight;
 
                     // $("#app")[0].__vue__.$children[1].$children[3].$refs.recipientAddress.$vnode.componentOptions.propsData.orderInfo.recipientAddrId = 130804;
@@ -80,7 +77,7 @@ if (webSite == "http://192.168.201.198:4000/stock_items/check_out_by_wave?q[stoc
                 window.clearInterval(request_interval);
                 console.log("*** inserting button completed***");
             } else {
-                console.log("*** waiting ***");
+                console.log("*** waiting for vue rendering ***");
             }
 
         }
