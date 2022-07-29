@@ -70,6 +70,9 @@ if (webSite == "http://192.168.201.198:4000/stock_items/check_out_by_wave?q[stoc
                     // $("#app")[0].__vue__.$children[1].$children[3].$refs.numberInfo.order.orderNo = "order#";
                     console.log("*** pasted ***");
                     $("#app")[0].__vue__.$children[1].$children[3].$refs.packageInfo.packages[0].weight = output.weight;
+                    $("#app")[0].__vue__.$children[1].$children[3].$refs.packageInfo.packages[0].width = output.weight;
+                    $("#app")[0].__vue__.$children[1].$children[3].$refs.packageInfo.packages[0].height = output.weight;
+                    $("#app")[0].__vue__.$children[1].$children[3].$refs.packageInfo.packages[0].length = output.weight;
 
                     // $("#app")[0].__vue__.$children[1].$children[3].$refs.recipientAddress.$vnode.componentOptions.propsData.orderInfo.recipientAddrId = 130804;
 
