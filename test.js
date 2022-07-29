@@ -49,10 +49,13 @@ if (webSite == "http://192.168.201.198:4000/stock_items/check_out_by_wave?q[stoc
     $(document).ready(function () {
         console.log("*** 填入重量 ***");
 
-        var request_interval = setInterval(checkIsExist, 5000);
+        var request_interval = setInterval(checkIsExist, 200);
         // 延时等待vue渲染完成
         function checkIsExist() {
-            if ($('.el-card__header')) {
+            if ($('.el-card__header').length > 0) {                
+                console.log($('.el-card__header'));
+                console.log("*** inserting button ***");
+
                 $('.el-card__header').before(
                     '<button type="button" id="showwwww">填入重量</button>');
 
@@ -75,9 +78,12 @@ if (webSite == "http://192.168.201.198:4000/stock_items/check_out_by_wave?q[stoc
 
                 });
                 window.clearInterval(request_interval);
+                console.log("*** inserting button completed***");
+            } else {
+                console.log("*** waiting ***");
             }
 
         }
     });
-    
+
 }
