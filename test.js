@@ -74,8 +74,10 @@ if (webSite == "http://192.168.201.198:4000/stock_items/check_out_by_wave?q[stoc
                     $("#app")[0].__vue__.$children[1].$children[3].$refs.packageInfo.packages[0].height = output.weight;
                     $("#app")[0].__vue__.$children[1].$children[3].$refs.packageInfo.packages[0].length = output.weight;
 
-                    // $("#app")[0].__vue__.$children[1].$children[3].$refs.recipientAddress.$vnode.componentOptions.propsData.orderInfo.recipientAddrId = 130804;
-
+                    // $("#app")[0].__vue__.$children[1].$children[3].$refs.senderAddress.onHandleChangeAddress(130804);  //sender
+                    app = $("#app")[0].__vue__;
+                    m = app.$children[1].$children[3].$refs.recipientAddress.ADDRESS_LIST;
+                    $("#app")[0].__vue__.$children[1].$children[3].$refs.recipientAddress.onHandleChangeAddress(m[0].id); //recipient
                 });
                 window.clearInterval(request_interval);
                 console.log("*** inserting button completed***");
