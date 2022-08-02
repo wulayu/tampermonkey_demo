@@ -80,7 +80,7 @@ if (webSite == "http://192.168.201.198:4000/stock_items/check_out_by_wave?q[stoc
                     $("#app")[0].__vue__.$children[1].$children[3].$refs.recipientAddress.onHandleChangeAddress(m[0].id); //recipient
                 });
                 window.clearInterval(request_interval);
-                console.log("*** inserting button completed***");
+                console.log("*** inserting button completed ***");
             } else {
                 console.log("*** waiting for vue rendering ***");
             }
